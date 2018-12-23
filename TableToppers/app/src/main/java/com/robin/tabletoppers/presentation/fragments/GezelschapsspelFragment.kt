@@ -34,15 +34,16 @@ class GezelschapsspelFragment() : BaseFragment() {
 
     override fun onStart(){
         super.onStart()
-        gezelschapsspelen = haalGezelschapsspelenOp()
+
+        //dit moet geïnjecteerd worden?
+        gezelschapsspelen = GetGezelschapsspelen(GezelschapsspelRepository(ValseGezelschapsspelenRepository())).invoke()
+        //
+
+
         recyclerview.adapter = SimpleItemRecyclerViewAdapter(gezelschapsspelen!!)
         recyclerview.layoutManager = LinearLayoutManager(context)
     }
 
-    private fun haalGezelschapsspelenOp(): List<Gezelschapsspel>{
-        //dit moet geïnjecteerd worden
-        return GetGezelschapsspelen(GezelschapsspelRepository(ValseGezelschapsspelenRepository())).invoke()
-    }
 
     override fun onAttach(context: Context){
         super.onAttach(context)
