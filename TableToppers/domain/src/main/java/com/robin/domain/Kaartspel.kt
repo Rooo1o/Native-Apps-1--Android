@@ -15,11 +15,10 @@ class Kaartspel(id: Long,
                jaarVanUitkomst: Int,
                speelduurRangeInMinuten: IntArray,
                aantalSpelersRange: IntArray,
-               redactieScore: Double,
-               gebruikersScores: DoubleArray,
+               gebruikersScores: MutableList<Beoordeling>,
                hoofdfoto: String,
                aantalKaarten: Int):
-    Gezelschapsspel(id, naam, omschrijving, uitgever, jaarVanUitkomst, speelduurRangeInMinuten, aantalSpelersRange, redactieScore, gebruikersScores, hoofdfoto) {
+    Gezelschapsspel(id, naam, omschrijving, uitgever, jaarVanUitkomst, speelduurRangeInMinuten, aantalSpelersRange, gebruikersScores, hoofdfoto) {
 
 }
 

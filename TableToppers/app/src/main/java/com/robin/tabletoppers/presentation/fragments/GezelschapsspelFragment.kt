@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.orhanobut.logger.Logger
 import com.robin.data.GezelschapsspelRepository
 import com.robin.domain.Gezelschapsspel
@@ -38,7 +39,6 @@ class GezelschapsspelFragment() : BaseFragment() {
         //dit moet geïnjecteerd worden?
         gezelschapsspelen = GetGezelschapsspelen(GezelschapsspelRepository(ValseGezelschapsspelenRepository())).invoke()
         //
-
 
         recyclerview.adapter = SimpleItemRecyclerViewAdapter(gezelschapsspelen!!)
         recyclerview.layoutManager = LinearLayoutManager(context)
@@ -81,14 +81,10 @@ class GezelschapsspelFragment() : BaseFragment() {
             holder.naam.text = gezelschapsspel.naam
             holder.jaarVanUitgave.text = gezelschapsspel.jaarVanUitkomst.toString()
 
-
             //foto instellen
             val context = holder.itemView.context
             val resId: Int = context.resources.getIdentifier(gezelschapsspel.hoofdfoto, "drawable", context.packageName)
             holder.thumbnail.setImageResource(resId)
-
-
-
 
             with(holder.thumbnail) {
                 tag = gezelschapsspel
@@ -101,7 +97,6 @@ class GezelschapsspelFragment() : BaseFragment() {
         inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
             val naam: TextView = view.name
             var jaarVanUitgave: TextView = view.textview_rowlayout_jaarVanUitgave
-
             var thumbnail: ImageView = view.imageview_rowlayout_thumbnail
         }
 

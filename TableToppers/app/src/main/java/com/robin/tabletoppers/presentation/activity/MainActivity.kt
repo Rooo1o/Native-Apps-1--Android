@@ -10,9 +10,13 @@ import com.orhanobut.logger.Logger
 
 import com.robin.tabletoppers.presentation.fragments.BaseFragment
 import com.robin.tabletoppers.presentation.fragments.GezelschapsspelFragment
+import com.robin.tabletoppers.presentation.fragments.LoginFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), GezelschapsspelFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(),
+    GezelschapsspelFragment.OnFragmentInteractionListener,
+    LoginFragment.OnFragmentInteractionListener
+{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +33,13 @@ class MainActivity : AppCompatActivity(), GezelschapsspelFragment.OnFragmentInte
             override fun getItem(p0: Int): Fragment {
                 when(p0) {
                     BaseFragment.GEZELSCHAPSSPELEN -> return GezelschapsspelFragment.newInstance()
+                    BaseFragment.LOGIN -> return LoginFragment.newInstance()
                 }
                 return GezelschapsspelFragment()
             }
+
             override fun getCount(): Int {
-                return 1
+                return 2
             }
         }
 
@@ -45,12 +51,11 @@ class MainActivity : AppCompatActivity(), GezelschapsspelFragment.OnFragmentInte
         }*/
     }
 
-    override fun onStop(){
-        super.onStop()
+    override fun toonGezelschapsspelen(){
+        TODO("not implemented")
     }
 
-
-    override fun toonGezelschapsspelen(){
+    override fun loginClicked(){
         TODO("not implemented")
     }
 

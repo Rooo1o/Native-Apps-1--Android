@@ -12,7 +12,7 @@ class Bordspel(id: Long,
                jaarVanUitkomst: Int,
                speelduurRangeInMinuten: IntArray,
                aantalSpelersRange: IntArray,
-               redactieScore: Double,
-               hoofdfoto: String,
-               gebruikersScores: DoubleArray):
-    Gezelschapsspel(id, naam, omschrijving, uitgever, jaarVanUitkomst, speelduurRangeInMinuten, aantalSpelersRange, redactieScore,  gebruikersScores, hoofdfoto){}
+               gebruikersScores: MutableList<Beoordeling>,
+               hoofdfoto: String
+               ):
+    Gezelschapsspel(id, naam, omschrijving, uitgever, jaarVanUitkomst, speelduurRangeInMinuten, aantalSpelersRange, gebruikersScores, hoofdfoto){}

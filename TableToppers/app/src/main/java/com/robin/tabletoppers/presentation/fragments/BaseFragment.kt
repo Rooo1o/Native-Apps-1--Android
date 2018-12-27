@@ -7,6 +7,7 @@ open class BaseFragment : Fragment() {
 
     companion object {
         const val GEZELSCHAPSSPELEN = 0
+        const val LOGIN = 1
     }
 
 }

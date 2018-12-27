@@ -25,6 +25,10 @@ abstract class Gezelschapsspel(val id: Long,
                                val jaarVanUitkomst: Int,
                                val speelduurRangeInMinuten: IntArray,
                                val aantalSpelersRange: IntArray,
-                               var redactieScore: Double,
-                               var gebruikersScores: DoubleArray,
-                               val hoofdfoto: String){}
+                               var gebruikersScores: MutableList<Beoordeling>,
+                               val hoofdfoto: String)
+{
+    fun voegBeoordelingToe(beoordeling: Beoordeling){
+        gebruikersScores.add(beoordeling)
+    }
+}
