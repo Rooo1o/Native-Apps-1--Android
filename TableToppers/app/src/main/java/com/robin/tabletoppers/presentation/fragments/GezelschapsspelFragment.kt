@@ -1,10 +1,7 @@
 package com.robin.tabletoppers.presentation.fragments
 
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.constraint.R.id.parent
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -12,16 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.orhanobut.logger.Logger
-import com.robin.data.GezelschapsspelRepository
+import com.robin.data.TabletoppersRepository
 import com.robin.domain.Gezelschapsspel
 import com.robin.tabletoppers.R
-import com.robin.tabletoppers.framework.ValseGezelschapsspelenRepository
+import com.robin.tabletoppers.framework.ValseGebruikersSource
+import com.robin.tabletoppers.framework.ValseGezelschapsspelenSource
 import com.robin.usecases.GetGezelschapsspelen
 import kotlinx.android.synthetic.main.fragment_gezelschapsspelen.*
 import kotlinx.android.synthetic.main.row_layout.view.*
-import java.security.AccessController.getContext
 
 class GezelschapsspelFragment() : BaseFragment() {
 
@@ -37,7 +33,7 @@ class GezelschapsspelFragment() : BaseFragment() {
         super.onStart()
 
         //dit moet geïnjecteerd worden?
-        gezelschapsspelen = GetGezelschapsspelen(GezelschapsspelRepository(ValseGezelschapsspelenRepository())).invoke()
+        gezelschapsspelen = GetGezelschapsspelen().invoke()
         //
 
         recyclerview.adapter = SimpleItemRecyclerViewAdapter(gezelschapsspelen!!)
@@ -104,6 +100,7 @@ class GezelschapsspelFragment() : BaseFragment() {
 
 
     companion object {
+        val TAG = this::class.java.simpleName
         @JvmStatic fun newInstance() = GezelschapsspelFragment()
     }
 

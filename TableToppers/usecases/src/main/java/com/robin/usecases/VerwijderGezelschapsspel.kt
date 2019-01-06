@@ -1,14 +1,14 @@
 package com.robin.usecases
 
-import com.robin.data.GezelschapsspelRepository
+import com.robin.data.TabletoppersRepository
 import com.robin.domain.Gezelschapsspel
 
-class VerwijderGezelschapsspel(private val gezelschapsspelRepository: GezelschapsspelRepository){
+class VerwijderGezelschapsspel(private val tabletoppersRepository: TabletoppersRepository){
     operator fun invoke(gezelschapsspel: Gezelschapsspel){
-        gezelschapsspelRepository.verwijderGezelschapsspel(gezelschapsspel)
+        tabletoppersRepository.verwijderGezelschapsspel(gezelschapsspel)
     }
 
     operator fun invoke(id: Long){
-        gezelschapsspelRepository.verwijderGezelschapsspel(id)
+        tabletoppersRepository.verwijderGezelschapsspel(id)
     }
 }

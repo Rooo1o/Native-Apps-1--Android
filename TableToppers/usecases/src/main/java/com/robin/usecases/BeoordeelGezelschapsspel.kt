@@ -1,11 +1,11 @@
 package com.robin.usecases
 
-import com.robin.data.GezelschapsspelRepository
+import com.robin.data.TabletoppersRepository
 import com.robin.domain.Beoordeling
 
-class BeoordeelGezelschapsspel(private val gezelschapsspelRepository: GezelschapsspelRepository){
+class BeoordeelGezelschapsspel(private val tabletoppersRepository: TabletoppersRepository){
      operator fun invoke(spelId: Long, userId: Long, score: Double){
          val beoordeling = Beoordeling(userId, score)
-         gezelschapsspelRepository.beoordeelGezelschapsspel(spelId, beoordeling)
+         tabletoppersRepository.beoordeelGezelschapsspel(spelId, beoordeling)
      }
 }

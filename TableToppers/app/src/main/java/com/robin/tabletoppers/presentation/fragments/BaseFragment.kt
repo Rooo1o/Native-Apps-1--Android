@@ -8,6 +8,8 @@ open class BaseFragment : Fragment() {
     companion object {
         const val GEZELSCHAPSSPELEN = 0
         const val LOGIN = 1
+        const val REGISTREER = 2
+        const val NIEUW_GEZELSCHAPSSPEL = 3
     }
 
 }

@@ -1,12 +1,16 @@
 package com.robin.usecases
 
-import com.robin.data.GezelschapsspelRepository
+import com.robin.data.TabletoppersRepository
 import com.robin.domain.Gezelschapsspel
+import javax.inject.Inject
+
 //import kotlinx.android.parcel.Parcelize
 
 //@Parcelize
-class GetGezelschapsspelen(private val gezelschapsspelRepository: GezelschapsspelRepository)/*: Parcelable*/ {
+class GetGezelschapsspelen()/*: Parcelable*/ {
 
-    operator fun invoke(): List<Gezelschapsspel> = gezelschapsspelRepository.getGezelschapsspelen()
+    @Inject
+    private lateinit var tabletoppersRepository: TabletoppersRepository
+    operator fun invoke(): List<Gezelschapsspel> = tabletoppersRepository.getGezelschapsspelen()
 
 }

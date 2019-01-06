@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">TableToppers</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="login">Login</string>
+    <string name="registreer">Registreer</string>
+    <string name="header">Account</string>
+    <string name="alle_gezelschapsspelen">Alle gezelschapsspelen</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

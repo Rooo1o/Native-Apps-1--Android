@@ -2,9 +2,11 @@ package com.robin.tabletoppers.framework
 
 import com.robin.data.GezelschapsspelPersistenceSource
 import com.robin.domain.*
+import javax.inject.Singleton
 import kotlin.random.Random
 
-class ValseGezelschapsspelenRepository: GezelschapsspelPersistenceSource {
+@Singleton
+class ValseGezelschapsspelenSource: GezelschapsspelPersistenceSource {
 
     val spelenLijst = mutableListOf<Gezelschapsspel>()
 

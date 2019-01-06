@@ -1,9 +1,12 @@
 package com.robin.usecases
 
-import com.robin.data.GebruikersRepository
+import com.robin.data.TabletoppersRepository
+import javax.inject.Inject
 
-class Registreer(private val gebruikersRepository: GebruikersRepository){
+class Registreer(){
+    @Inject
+    lateinit var tabletoppersRepository: TabletoppersRepository
     operator fun invoke(id: Long, gebruikersnaam: String, emailadres: String, wachtwoord: String): Boolean{
-        return gebruikersRepository.registreer(id, gebruikersnaam, emailadres, wachtwoord)
+        return tabletoppersRepository.registreer(id, gebruikersnaam, emailadres, wachtwoord)
     }
 }
